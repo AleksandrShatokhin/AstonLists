@@ -3,16 +3,16 @@ package CustomCollections;
 public class CLinkedList<T> {
     private CNode<T> head;
     private CNode<T> tail;
-    private int count;
+    private int size;
 
-    public boolean IsEmpty()
+    public boolean isEmpty()
     {
-        return count == 0;
+        return size == 0;
     }
 
-    public int getCount()
+    public int getSize()
     {
-        return count;
+        return size;
     }
 
     public void AddElement(T data)
@@ -29,10 +29,10 @@ public class CLinkedList<T> {
         }
 
         tail = node;
-        count = count + 1;
+        size = size + 1;
     }
 
-    public T getHeadElement()
+    public T getElement()
     {
         CNode<T> temp = head;
         Remove(head.Data);
@@ -67,7 +67,7 @@ public class CLinkedList<T> {
                     }
                 }
 
-                count = count - 1;
+                size = size - 1;
                 return true;
             }
 
@@ -84,12 +84,12 @@ public class CLinkedList<T> {
         node.Next = head;
         head = node;
 
-        if (IsEmpty())
+        if (isEmpty())
         {
             tail = head;
         }
 
-        count = count + 1;
+        size = size + 1;
     }
 
     public boolean Contains(T data)
@@ -107,6 +107,6 @@ public class CLinkedList<T> {
     {
         head = null;
         tail = null;
-        count = 0;
+        size = 0;
     }
 }
